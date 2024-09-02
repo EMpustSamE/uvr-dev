@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Border_GetName",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Border_GetName",
+  "parent":{
+    "name":"Border",
+    "path":"folders/Scripts/Border.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

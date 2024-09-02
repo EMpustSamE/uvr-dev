@@ -1,0 +1,146 @@
+live;
+
+if(Input_IsPressed(INPUT.DOWN)){
+	choice+=1
+	audio_play_sound(snd_menu_switch,0,false);
+}
+if(Input_IsPressed(INPUT.UP)){
+	choice-=1
+	audio_play_sound(snd_menu_switch,0,false);
+}
+
+if(choice<0){
+	choice=5;
+}
+if(choice>5){
+	choice=0
+}
+if(fullscreen_n>1){
+	fullscreen_n=1;
+}
+if(fullscreen_n<0){
+	fullscreen_n=0;
+}
+if(global.language<0){
+	Language_Set(LANGUAGE.ENGLISH);
+}
+if(global.language>1){
+	Language_Set(LANGUAGE.SCHINESE);
+}
+
+if(window_get_fullscreen()=false){
+	fullscreen=1;
+}
+if(window_get_fullscreen()=true){
+	fullscreen=0;
+}
+
+if(Input_IsPressed(INPUT.RIGHT)){
+	if(choice!=2&&choice!=0){
+		audio_play_sound(snd_menu_switch,0,false);
+	}
+	if(choice=0&&global.language=LANGUAGE.ENGLISH){
+		if(global.language=LANGUAGE.ENGLISH){
+			audio_play_sound(snd_menu_confirm,0,0);
+		}
+		Language_Set(LANGUAGE.SCHINESE);
+		choice=0;
+	}
+	if(choice==1){
+		
+	}
+	if(choice==3){
+		if(fullscreen_n==1){
+			window_set_fullscreen(true);
+			fullscreen_n=0;
+			Flag_Set(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.FULLSCREEN,fullscreen_n);
+		}
+	}
+	if(choice==4){
+		if(border_var<1){
+			border_var+=1;
+		}
+	}
+}
+if(Input_IsPressed(INPUT.LEFT)){
+	if(choice!=2&&choice!=0){
+		audio_play_sound(snd_menu_switch,0,false);
+	}
+	if(choice=0&&global.language=LANGUAGE.SCHINESE){
+		if(global.language=LANGUAGE.SCHINESE){
+			audio_play_sound(snd_menu_confirm,0,0);
+		}
+		Language_Set(LANGUAGE.ENGLISH);
+		choice=0;
+	}
+	if(choice==1){
+		
+	}
+	if(choice==3){
+		if(fullscreen_n==0){
+			window_set_fullscreen(false);
+			fullscreen_n=1;
+			Flag_Set(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.FULLSCREEN,fullscreen_n);
+		}
+	}
+	if(choice==4){
+		if(border_var>0){
+			border_var-=1;
+		}
+	}
+}
+
+if(Input_IsHeld(INPUT.LEFT)){
+	if(choice==2){
+		if(world.volume>0){
+			world.volume-=0.01;
+			Flag_Set(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.VOLUME,world.volume);
+		}
+	}
+}
+if(Input_IsHeld(INPUT.RIGHT)){
+	if(choice==2){
+		if(world.volume<1){
+			world.volume+=0.01;
+			Flag_Set(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.VOLUME,world.volume);
+		}
+	}
+}
+if(choice==2){
+	volume_index.text+=prefix+"{clear}{color `yellow`}"+string(round(world.volume*100))+"%";
+}else{
+	volume_index.text+=prefix+"{clear}"+string(round(world.volume*100))+"%";
+}
+
+if(window_get_fullscreen()){
+	fullscreen_n=0;
+}else{
+	fullscreen_n=1;
+}
+if(fullscreen_n==0){
+	if(choice==3){
+		fullscreen_text=prefix+Lang_GetString("settings.fullscreen.on.choice");
+	}else{
+		fullscreen_text=prefix+Lang_GetString("settings.fullscreen.on");
+	}
+}else{
+	if(choice==3){
+		fullscreen_text=prefix+Lang_GetString("settings.fullscreen.off.choice");
+	}else{
+		fullscreen_text=prefix+Lang_GetString("settings.fullscreen.off");
+	}
+}
+
+if(choice==5&&Input_IsPressed(INPUT.CONFIRM)){
+	Flag_Save(FLAG_TYPE.SETTINGS);
+	room_goto(room_menu);
+}
+
+if(border_var>0){
+	Border_SetEnabled(true);
+	Border_SetSprite(spr_border_simple);
+}else{
+	Border_SetEnabled(false);
+}
+
+event_user(0);

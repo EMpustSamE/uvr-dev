@@ -1,0 +1,1 @@
+surf=surface_create(640,480);

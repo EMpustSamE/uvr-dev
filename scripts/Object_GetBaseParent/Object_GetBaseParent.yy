@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Object_GetBaseParent",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Object_GetBaseParent",
+  "parent":{
+    "name":"Item",
+    "path":"folders/Scripts/Item.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

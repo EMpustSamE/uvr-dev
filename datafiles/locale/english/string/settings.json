@@ -1,0 +1,21 @@
+{
+    "settings.title":"Settings",
+    "settings.language":"Language",
+    "settings.language_index":"{color `gray`}<{color `white`}English>",
+    "settings.window_size":"Window Size",
+    "settings.volume":"Volume",
+    "settings.fullscreen":"Fullscreen",
+    "settings.border":"Border",
+    "settings.save":"Save\\&Back",
+    "settings.fullscreen.on":"< On {color `gray`}>",
+    "settings.fullscreen.off":"{color `gray`}<{color `white`} Off >",
+    "settings.language.choice":"{color `yellow`}Language",
+    "settings.language_index.choice":"{color `gray`}<{color `yellow`}English>",
+    "settings.window_size.choice":"{color `yellow`}Window Size",
+    "settings.volume.choice":"{color `yellow`}Volume",
+    "settings.fullscreen.choice":"{color `yellow`}Fullscreen",
+    "settings.border.choice":"{color `yellow`}Border",
+    "settings.save.choice":"{color `yellow`}Save\\&Back",
+    "settings.fullscreen.on.choice":"{color `yellow`}< On {color `gray`}>",
+    "settings.fullscreen.off.choice":"{color `gray`}<{color `yellow`} Off >"
+}

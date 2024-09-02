@@ -1,0 +1,21 @@
+{
+    "settings.title":"设置",
+    "settings.language":"语言",
+    "settings.language_index":"<简体中文{color `gray`}>",
+    "settings.window_size":"窗口大小",
+    "settings.volume":"音量",
+    "settings.fullscreen":"全屏",
+    "settings.border":"边框",
+    "settings.save":"保存并退出",
+    "settings.fullscreen.on":"< 开 {color `gray`}>",
+    "settings.fullscreen.off":"{color `gray`}<{color `white`} 关 >",
+    "settings.language.choice":"{color `yellow`}语言",
+    "settings.language_index.choice":"{color `yellow`}<简体中文{color `gray`}>",
+    "settings.window_size.choice":"{color `yellow`}窗口大小",
+    "settings.volume.choice":"{color `yellow`}音量",
+    "settings.fullscreen.choice":"{color `yellow`}全屏",
+    "settings.border.choice":"{color `yellow`}边框",
+    "settings.save.choice":"{color `yellow`}保存并退出",
+    "settings.fullscreen.on.choice":"{color `yellow`}< 开 {color `gray`}>",
+    "settings.fullscreen.off.choice":"{color `gray`}<{color `yellow`} 关 >"
+}
