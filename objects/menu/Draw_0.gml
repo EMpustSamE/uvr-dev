@@ -2,9 +2,9 @@ draw_sprite_ext(spr_uvopbg,0,0,-452/2,0.719/2,0.716/2,0,c_white,1);
 if(_menu==0){
 	if(_mode==0){
 		draw_sprite_ext(spr_logo_uv,33,160,60,1/9,1/9,0,c_white,1);
-		draw_sprite_ext(spr_pixel,0,230/2,344/2,77,20,0,c_white,1);
-		draw_sprite_ext(spr_pixel,0,233/2,347/2,74,17,0,c_black,1);
-		draw_sprite_ext(spr_pixel,0,230/2,382/2,77,20,0,c_white,1);
-		draw_sprite_ext(spr_pixel,0,233/2,385/2,74,17,0,c_black,1);
+		draw_sprite_ext(spr_pixel,0,255/2,344/2,154/2,20,0,c_white,1);
+		draw_sprite_ext(spr_pixel,0,258/2,347/2,148/2,17,0,c_black,1);
+		draw_sprite_ext(spr_pixel,0,255/2,382/2,154/2,20,0,c_white,1);
+		draw_sprite_ext(spr_pixel,0,258/2,385/2,148/2,17,0,c_black,1);
 	}
 }

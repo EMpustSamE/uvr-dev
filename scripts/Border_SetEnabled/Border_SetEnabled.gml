@@ -3,11 +3,31 @@ function Border_SetEnabled() {
 	var ENABLED=argument[0];
 
 	if(ENABLED){
-		window_set_size(960,540);
+		switch(world.window_size){
+			case 1:
+				window_set_size(960,540);
+				break;
+			case 1.5:
+				window_set_size(1440,1080);
+				break;
+			case 2:
+				window_set_size(1920,1440);
+				break;
+		}
 		border._enabled=true;
 		border.blur=argument[1]
 	}else{
-		window_set_size(640,480);
+		switch(world.window_size){
+			case 1:
+				window_set_size(640,480);
+				break;
+			case 1.5:
+				window_set_size(960,720);
+				break;
+			case 2:
+				window_set_size(1280,960);
+				break;
+		}
 		border._enabled=false;
 	
 		if(sprite_exists(border._sprite)){

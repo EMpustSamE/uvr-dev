@@ -81,6 +81,7 @@ _menu_item_used_last=-1;
 
 _turn_number=0;
 _turn_info=ds_map_create();
+_turn_count_time=0;
 
 _dialog[0]=noone;
 _dialog[1]=noone;

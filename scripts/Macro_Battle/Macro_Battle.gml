@@ -118,7 +118,7 @@ function Macro_Battle() {
 		SOUL_X,
 		SOUL_Y
 	};
-
+	#macro BATTLE_TURN_SCRIPT if(battle._turn_count_time>battle._turn_time) exit else if(battle._turn_count_time<battle._turn_time) battle._turn_count_time=battle._turn_time else if(battle._turn_count_time==battle._turn_time)
 	enum BATTLE_TURN_BOARD_TRANSFORM_MODE{
 		SPEED,
 		DURATION

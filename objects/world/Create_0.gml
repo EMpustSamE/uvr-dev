@@ -1,6 +1,7 @@
 _time = 0;
 _frame_skip = 0;
 volume = 0;
+window_size = 0;
 global.blur_amount = 0;
 global.classic_ui = 0;
 global.anim_speed = 1;

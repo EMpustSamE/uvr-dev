@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Window_Set_Size",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Window_Set_Size",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -4,8 +4,10 @@ prefix="{font FONT.MENU}{instant true}{shadow true}{scale 2}{depth -9999}";//{al
 title=noone;
 language=noone;
 language_index=noone;
+language_n=global.language;
 window_size=noone;
 window_size_index=noone;
+window_size_n=Flag_Get(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.WINDOW_SIZE);
 volume=noone;
 volume_index=noone;
 fullscreen=noone;
@@ -18,7 +20,7 @@ if(window_get_fullscreen()){
 }
 border_obj=noone;
 border_obj_index=noone;
-border_var=0;
+border_var=Flag_Get(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.BORDER);
 save=noone;
 choice=0;
 

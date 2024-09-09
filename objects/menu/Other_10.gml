@@ -4,10 +4,10 @@ if(_menu==0){
 	if(_mode==0){
 		/*_inst_instruction=instance_create_depth(170,40,0,text_typer);
 		_inst_instruction.text=_prefix+"{color_text `gray_light`} --- Instruction ---{space_y -1}&&{space_y 2}[Z or ENTER] - Confirm&[X or SHIFT] - Cancel&[C or CTRL] - Menu (In-game)&[F4] - Fullscreen&[Hold ESC] - Quit&When HP is 0, you lose.";*/
-		_inst_begin=instance_create_depth(240,344,0,text_typer);
-		_inst_begin.text=_prefix+Lang_GetString("menu.begin");
-		_inst_settings=instance_create_depth(247,384,0,text_typer);
-		_inst_settings.text=_prefix+Lang_GetString("menu.settings");
+		_inst_begin=instance_create_depth(320,344,0,text_typer);
+		_inst_begin.text=_prefix+"{align 1}"+Lang_GetString("menu.begin");
+		_inst_settings=instance_create_depth(320,384,0,text_typer);
+		_inst_settings.text=_prefix+"{align 1}"+Lang_GetString("menu.settings");
 		with(text_typer){
 			event_user(15);
 		}

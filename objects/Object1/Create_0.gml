@@ -1,0 +1,1 @@
+testWindow = windows_create("OK",500,500)

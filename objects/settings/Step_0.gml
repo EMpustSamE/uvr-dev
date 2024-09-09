@@ -21,11 +21,19 @@ if(fullscreen_n>1){
 if(fullscreen_n<0){
 	fullscreen_n=0;
 }
-if(global.language<0){
-	Language_Set(LANGUAGE.ENGLISH);
+if(language_n<0){
+	Language_Set(0);
+	language_n=0;
 }
-if(global.language>1){
-	Language_Set(LANGUAGE.SCHINESE);
+if(language_n>1){
+	Language_Set(1);
+	language_n=1;
+}
+if(window_size_n<1){
+	window_size_n=1;
+}
+if(window_size_n>2){
+	window_size_n=2;
 }
 
 if(window_get_fullscreen()=false){
@@ -39,15 +47,16 @@ if(Input_IsPressed(INPUT.RIGHT)){
 	if(choice!=2&&choice!=0){
 		audio_play_sound(snd_menu_switch,0,false);
 	}
-	if(choice=0&&global.language=LANGUAGE.ENGLISH){
-		if(global.language=LANGUAGE.ENGLISH){
-			audio_play_sound(snd_menu_confirm,0,0);
-		}
-		Language_Set(LANGUAGE.SCHINESE);
+	if(choice=0&&language_n<1){
+		language_n+=1;
+		audio_play_sound(snd_menu_confirm,0,0);
+		Language_Set(language_n);
 		choice=0;
 	}
-	if(choice==1){
-		
+	if(choice==1&&window_size_n<2){
+		window_size_n+=1;
+		Window_Set_Size(window_size_n);
+		Flag_Set(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.WINDOW_SIZE,window_size_n);
 	}
 	if(choice==3){
 		if(fullscreen_n==1){
@@ -66,15 +75,16 @@ if(Input_IsPressed(INPUT.LEFT)){
 	if(choice!=2&&choice!=0){
 		audio_play_sound(snd_menu_switch,0,false);
 	}
-	if(choice=0&&global.language=LANGUAGE.SCHINESE){
-		if(global.language=LANGUAGE.SCHINESE){
-			audio_play_sound(snd_menu_confirm,0,0);
-		}
-		Language_Set(LANGUAGE.ENGLISH);
+	if(choice=0&&language_n>0){
+		language_n-=1;
+		audio_play_sound(snd_menu_confirm,0,0);
+		Language_Set(language_n);
 		choice=0;
 	}
-	if(choice==1){
-		
+	if(choice==1&&window_size_n>0){
+		window_size_n-=1;
+		Window_Set_Size(window_size_n);
+		Flag_Set(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.WINDOW_SIZE,window_size_n);
 	}
 	if(choice==3){
 		if(fullscreen_n==0){
@@ -107,9 +117,9 @@ if(Input_IsHeld(INPUT.RIGHT)){
 	}
 }
 if(choice==2){
-	volume_index.text+=prefix+"{clear}{color `yellow`}"+string(round(world.volume*100))+"%";
+	volume_index.text=prefix+"{color `yellow`}"+string(round(world.volume*100))+"%";
 }else{
-	volume_index.text+=prefix+"{clear}"+string(round(world.volume*100))+"%";
+	volume_index.text=prefix+string(round(world.volume*100))+"%";
 }
 
 if(window_get_fullscreen()){
@@ -141,6 +151,10 @@ if(border_var>0){
 	Border_SetSprite(spr_border_simple);
 }else{
 	Border_SetEnabled(false);
+}
+
+if(Input_IsPressed(INPUT.MENU)){
+	window_set_size(960,720);
 }
 
 event_user(0);

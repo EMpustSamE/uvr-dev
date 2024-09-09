@@ -1,6 +1,6 @@
 live;
 
-if(instance_exists(title)){
+/*if(instance_exists(title)){
 	instance_destroy(title);
 }
 if(instance_exists(language)){
@@ -34,7 +34,10 @@ if(instance_exists(border_obj_index)){
 	instance_destroy(border_obj_index);
 }
 if(instance_exists(save)){
-	instance_destroy(save)
+	instance_destroy(save);
+}*/
+with(text_typer){
+	instance_destroy();
 }
 
 title=instance_create_depth(320,30,0,text_typer);
@@ -60,9 +63,30 @@ if(choice==0){
 }
 if(choice==1){
 	window_size.text=prefix+Lang_GetString("settings.window_size.choice");
-	window_size_index.text=prefix+"{color `gray`}<{color `yellow`} 1x >";
+	switch(window_size_n){
+		case 1:
+			window_size_index.text=prefix+"{color `gray`}<{color `yellow`} 1x >";
+			break;
+		case 1.5:
+			window_size_index.text=prefix+"{color `yellow`}< 1.5x >";
+			break;
+		case 2:
+			window_size_index.text=prefix+"{color `yellow`}< 2x {color `gray`}>";
+			break;
+	}
 }else{
 	window_size.text=prefix+Lang_GetString("settings.window_size");
+	switch(window_size_n){
+		case 1:
+			window_size_index.text=prefix+"{color `gray`}<{color `white`} 1x >";
+			break;
+		case 1.5:
+			window_size_index.text=prefix+"< 1.5x >";
+			break;
+		case 2:
+			window_size_index.text=prefix+"< 2x {color `gray`}>";
+			break;
+	}
 	window_size_index.text=prefix+"{color `gray`}<{color `white`} 1x >";
 }
 if(choice==2){

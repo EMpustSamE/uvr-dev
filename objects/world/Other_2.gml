@@ -1,9 +1,9 @@
 global.debug=true;
 global.language=LANGUAGE.ENGLISH;
 
-if(global.debug&&!instance_exists(obj_debug)){
+//if(global.debug){
 	instance_create_depth(0,0,0,obj_debug);
-}
+//}
 
 Anim_Init();
 Bezier_Init();
@@ -53,8 +53,9 @@ application_surface_draw_enable(false);
 
 //Border_SetEnabled(true);
 
-Flag_Load(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.VOLUME);
+Flag_Load(FLAG_TYPE.SETTINGS);
 volume = Flag_Get(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.VOLUME,1);
+window_size = Flag_Get(FLAG_TYPE.SETTINGS,FLAG_SETTINGS.WINDOW_SIZE,1);
 
 randomize();
 

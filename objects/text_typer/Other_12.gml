@@ -709,4 +709,17 @@ case "choice_switch_sound":
     }
     //enable or disable switch sound, not much to say
     break;
+case "encounter":
+	if(is_real(cmd[|1])){
+		if(is_bool(cmd[|2])){
+			if(is_bool(cmd[|3])){
+				Encounter_Start(cmd[|1],cmd[|2],cmd[|3])
+			}else{
+				Encounter_Start(cmd[|1],cmd[|2],0)
+			}
+		}else{
+			Encounter_Start(cmd[|1],0,0)
+		}
+	}
+	break;
 }
